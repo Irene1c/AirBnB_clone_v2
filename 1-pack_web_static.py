@@ -11,11 +11,11 @@ def do_pack():
     """ function that generates a .tgz archive """
 
     dtf = datetime.now().strftime("%Y%m%d%H%M%S")
-    archive_path = f"versions/web_static_{dtf}.tgz"
+    archive_path = "versions/web_static_{}.tgz".format(dtf)
 
     local("mkdir -p versions")
 
-    local(f"tar -cvzf {archive_path} web_static")
+    local("tar -cvzf {} web_static".format(archive_path))
 
     if exists(archive_path):
         return archive_path
