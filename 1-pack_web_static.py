@@ -13,8 +13,7 @@ def do_pack():
     dtf = datetime.now().strftime("%Y%m%d%H%M%S")
     archive_path = f"versions/web_static_{dtf}.tgz"
 
-    if not exists("versions"):
-        local("mkdir versions")
+    local("mkdir -p versions")
 
     local(f"tar -cvzf {archive_path} web_static")
 
