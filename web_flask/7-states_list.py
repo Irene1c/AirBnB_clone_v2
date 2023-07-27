@@ -14,8 +14,8 @@ def states_list():
         in the format: <state.id>: <B><state.name>
     """
 
-    states = storage.all(State).values()
-    return render_template('states_list.html', states=states)
+    states = storage.all(State)
+    return render_template('7-states_list.html', states=states)
 
 
 @app.teardown_appcontext
