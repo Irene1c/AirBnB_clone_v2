@@ -19,7 +19,7 @@ def states_list():
 
 
 @app.teardown_appcontext
-def remove_session(exception):
+def remove_session(exception=None):
     """remove the current SQLAlchemy Session after each request"""
 
     storage.close()
