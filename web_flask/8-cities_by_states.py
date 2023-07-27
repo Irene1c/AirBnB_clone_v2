@@ -11,7 +11,10 @@ app = Flask(__name__)
 @app.route('/cities_by_states', strict_slashes=False)
 def cities_by_states():
     """display a HTML page inside body tag te States sorted by name,
-        in the format: <state.id>: <B><state.name>
+        in the format: <state.id>: <B><state.name></B>
+        + UL tag: with the list of City objects linked
+        to the State sorted by name in the format:
+        <city.id>: <B><city.name></B>
     """
 
     states = storage.all(State)
